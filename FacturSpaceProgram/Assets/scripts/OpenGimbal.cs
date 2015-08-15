@@ -46,7 +46,7 @@ public class OpenGimbal : MonoBehaviour {
 
 	public int currentBot = -1;
 
-    public GestureListener 	gestureListener = null;
+    //public GestureListener 	gestureListener = null;
 
 	#region Unity methods
 
@@ -65,7 +65,7 @@ public class OpenGimbal : MonoBehaviour {
 			currentBot = _robots.Count -1;
 		}
 
-        gestureListener = Camera.main.GetComponent<GestureListener>();
+    //    gestureListener = Camera.main.GetComponent<GestureListener>();
 
 	}
 
@@ -93,30 +93,30 @@ public class OpenGimbal : MonoBehaviour {
 
         if (_robots[0] != null)
         {
-            KinectManager kinectManager = KinectManager.Instance;
+        //    KinectManager kinectManager = KinectManager.Instance;
 
 
-            if (kinectManager != null)
-            {
-                if (kinectManager.IsInitialized())
-                {
-                    if (kinectManager.IsUserDetected())
-                    {
-                        if (gestureListener.IsSwipeLeft())
-                        {
-                            GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
+          //  if (kinectManager != null)
+            //{
+              //  if (kinectManager.IsInitialized())
+                //{
+                  //  if (kinectManager.IsUserDetected())
+                    //{
+                      //  if (gestureListener.IsSwipeLeft())
+                        //{
+                          //  GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
 
-                        }
+                        //}
 
-                        else if (gestureListener.IsSwipeRight())
-                        {
-                            GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
+                        //else if (gestureListener.IsSwipeRight())
+                        //{
+                          //  GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
 
 
-                        }
-                    }
-                }
-            }
+                    //    /}
+                    //}
+                //}
+            //}
         
         }
 
