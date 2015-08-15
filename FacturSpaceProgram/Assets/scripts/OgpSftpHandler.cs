@@ -7,6 +7,8 @@ using System;
 using System.IO;
 using System.Net;
 
+
+[RequireComponent(typeof(GUITexture))]
 public class OgpSftpHandler : MonoBehaviour {
 
 
@@ -32,11 +34,11 @@ public class OgpSftpHandler : MonoBehaviour {
 
     }
 
-    IEnumerator download(string image)
+   public IEnumerator download(string image)
     {
         www = new WWW("http://192.168.42.1/"+image+".jpg");
         yield return www;
-        r = GameObject.Find("CapturedImage").GetComponent<GUITexture>();
+		r = gameObject.GetComponent<GUITexture> ();
      //   r.texture = www.texture;
         loading = false;
         try
@@ -51,6 +53,11 @@ public class OgpSftpHandler : MonoBehaviour {
         StopAllCoroutines();
       
     }
+
+	public IEnumerator UploadToAzure(){
+
+        yield return new WaitForSeconds(5);
+	}
 	// Use this for initialization
 	void Start () {
         StartCoroutine(download(imagename));
@@ -239,15 +246,7 @@ public class OgpSftpHandler : MonoBehaviour {
 
     }
 
-    private static void DownloadFile(SftpClient client, SftpFile file, string directory)
-    {
-        Console.WriteLine("Downloading {0}", file.FullName);
-        using (Stream fileStream = File.OpenWrite(Path.Combine(directory, file.Name)))
-        {
-            client.DownloadFile(file.FullName, fileStream);
-        }
-    }
-
+   
     
 
 }
