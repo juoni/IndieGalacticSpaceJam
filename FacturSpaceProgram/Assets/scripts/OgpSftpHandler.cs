@@ -53,6 +53,11 @@ public class OgpSftpHandler : MonoBehaviour {
         StopAllCoroutines();
       
     }
+
+	public IEnumerator UploadToAzure(){
+
+        yield return new WaitForSeconds(5);
+	}
 	// Use this for initialization
 	void Start () {
         StartCoroutine(download(imagename));
