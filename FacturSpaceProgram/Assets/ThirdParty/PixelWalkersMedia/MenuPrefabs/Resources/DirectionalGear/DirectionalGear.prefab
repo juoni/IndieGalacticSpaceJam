@@ -217,9 +217,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11417296
 MonoBehaviour:
@@ -240,9 +246,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11420302
 MonoBehaviour:
@@ -263,9 +275,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11422478
 MonoBehaviour:
@@ -286,9 +304,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11451244
 MonoBehaviour:
@@ -332,7 +356,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151618}
   m_Enabled: 1
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 278967fe96331c94fa9a7991d4087570, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -351,7 +375,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142596}
   m_Enabled: 1
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 278967fe96331c94fa9a7991d4087570, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -370,7 +394,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 154328}
   m_Enabled: 1
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 278967fe96331c94fa9a7991d4087570, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2
@@ -389,7 +413,7 @@ GUITexture:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183036}
   m_Enabled: 1
-  m_Texture: {fileID: 0}
+  m_Texture: {fileID: 2800000, guid: 278967fe96331c94fa9a7991d4087570, type: 3}
   m_Color: {r: .5, g: .5, b: .5, a: .5}
   m_PixelInset:
     serializedVersion: 2

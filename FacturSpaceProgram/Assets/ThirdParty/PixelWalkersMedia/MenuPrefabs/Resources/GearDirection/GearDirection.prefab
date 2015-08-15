@@ -35,7 +35,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &125456
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,9 +276,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11426234
 MonoBehaviour:
@@ -299,9 +305,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11436972
 MonoBehaviour:
@@ -322,9 +334,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11461396
 MonoBehaviour:
@@ -345,9 +363,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!114 &11490350
 MonoBehaviour:
@@ -378,6 +402,7 @@ MonoBehaviour:
   sounds: []
   randomize: 0
   background: {fileID: 13174150}
+  label: {fileID: 0}
 --- !u!114 &11497384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -397,9 +422,15 @@ MonoBehaviour:
     hover: {fileID: 0}
     armed: {fileID: 0}
   backgroundColors:
-    normal: {}
-    hover: {}
-    armed: {}
+    normal:
+      serializedVersion: 2
+      rgba: 4286545791
+    hover:
+      serializedVersion: 2
+      rgba: 4294967295
+    armed:
+      serializedVersion: 2
+      rgba: 4278190080
   useBackgroundColors: 1
 --- !u!124 &12466286
 Behaviour:
