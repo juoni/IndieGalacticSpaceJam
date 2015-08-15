@@ -27,4 +27,5 @@ public virtual void LightMeter(){}
 public virtual void Refresh(){}
 public virtual void Right(){}
 public virtual void Rover(){}
+public virtual void Slider(){}
 }
