@@ -438,7 +438,7 @@ Behaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 909523704}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!92 &909523707
 Behaviour:
   m_ObjectHideFlags: 0
@@ -518,13 +518,13 @@ MonoBehaviour:
   detectClosestUser: 1
   ignoreInferredJoints: 1
   lateUpdateAvatars: 0
-  smoothing: 3
+  smoothing: 0
   useBoneOrientationConstraints: 1
   allowedHandRotations: 1
   avatarControllers: []
   playerCalibrationPose: 4
   playerCommonGestures: 
-  minTimeBetweenGestures: .699999988
+  minTimeBetweenGestures: .300000012
   gestureListeners: []
   calibrationText: {fileID: 151560168}
   gesturesDebugText: {fileID: 1883252512}
