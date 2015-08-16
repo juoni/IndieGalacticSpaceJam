@@ -60,7 +60,10 @@ public class OpenGimbal : MonoBehaviour {
 
 			currentBot = 0;
 
-			_robots.Add(gameObject.AddComponent<SocketStateHandler>());
+		GameObject roverSocket = new GameObject ();
+		roverSocket.name = "RoverSocket";
+		roverSocket.AddComponent<SocketStateHandler> ();
+			_robots.Add(roverSocket.GetComponent<SocketStateHandler>());
 			_robots[_robots.Count -1].Address = address2;
 			_robots[_robots.Count -1].InitializeSocket(autoConnect,address2);
 		    _robots [_robots.Count - 1].RobotName = "Rover";

@@ -30,15 +30,32 @@ public virtual void Refresh(){
 	}
 
 	public virtual void Rover(){OpenGimbal ogp = GameObject.Find ("OpenGimbal").GetComponent<OpenGimbal> ();
-		ogp.currentBot = ogp.currentBot == 0 ? 1 : 0;}
-public virtual void Slider(){}
+		Debug.Log (ogp.currentBot + "Current bot");
+		//ogp.currentBot = ogp.currentBot == 0 ? 1 : 0;
+		Debug.Log (ogp.currentBot + "Current bot");
+		Refresh ();}
+public virtual void Slider()
+	{
 
+}
+	//up
+	//down
+	//left
+	//right
+
+	//for
+	//back
+
+
+	//hright
+	//hleft
 
 	public virtual void Up()
 	{
 		
 		OpenGimbal ogp = GameObject.Find ("OpenGimbal").GetComponent<OpenGimbal> ();	
 		ogp.gearDirection = OpenGimbal.GearDirection.UP;
+		Debug.Log (ogp.currentBot + "Current bot");
 		ogp._robots[ogp.currentBot].BroadcastMessage("y");
 		ogp._robots[ogp.currentBot].BroadcastMessage("c3");
 		Refresh ();

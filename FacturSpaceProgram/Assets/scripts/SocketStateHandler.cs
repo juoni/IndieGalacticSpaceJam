@@ -198,7 +198,7 @@ public class SocketStateHandler : MonoBehaviour
 
 	public void BroadcastMessage(string message){
 		serialIn.AddSerialOut (message);
-
+		Debug.Log ("BroadCast Address " + Address);
 		_socket.Send (message);
 
 	}
