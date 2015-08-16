@@ -25,7 +25,11 @@ public class SerialIn : MonoBehaviour {
 	}
 
 	public void AddMessage( string msg){
+		if (serial_in.Length > 100) {
+			serial_in = "";
+		}
 		serial_in += System.Environment.NewLine + msg;
+
 	}
 
 	public void AddSerialOut(string msg){

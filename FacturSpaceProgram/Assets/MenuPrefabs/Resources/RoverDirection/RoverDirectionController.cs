@@ -5,6 +5,8 @@ using PsiEngine.Interface3D;
 
 
 public class RoverDirectionController : AnimatedGenericMenuController{
+
+	public GameObject[] rover;
 void Awake(){}
 
 
@@ -17,12 +19,22 @@ InitilizeOptions();
  catch(System.Exception ex)
 {
 Debug.Log(ex.ToString());}
+
+//		if (GameObject.Find ("OpenGimbal").GetComponent<OpenGimbal> ().currentBot == 0) {
+//			foreach(GameObject go in rover){
+//				go.SetActive(false);
+//			}
+//		}
 }
+
+	void Update(){
+	
+	}
 public virtual void Camera(){}
 public virtual void Compass(){}
 
 public virtual void LightMeterBase(){}
-public virtual void LightMeter(){}
+	public virtual void LightMeter(){Light ();}
 public virtual void Refresh(){
 
 		StartCoroutine_Auto( GameObject.Find ("OpenGimbal").transform.Find ("OgpImageHandler").GetComponent<OgpSftpHandler>().download("imagesmall"));
@@ -38,6 +50,12 @@ public virtual void Slider()
 	{
 
 }
+
+	public virtual void Light(){
+		OpenGimbal ogp = GameObject.Find ("OpenGimbal").GetComponent<OpenGimbal> ();
+		ogp._robots [ogp.currentBot].BroadcastMessage ("light");
+	
+	}
 	//up
 	//down
 	//left
