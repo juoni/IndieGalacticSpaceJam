@@ -12,9 +12,9 @@ public class LaunchSeq : MonoBehaviour {
 	void Update () {
 		if (Time.time >= 35.0f) {
 			// Break for now.... Replace with load new scene....
-			Time.timeScale = 0;
-			Debug.Break();
-			Application.Quit();
+			Application.LoadLevel(2);
+//			Debug.Break();
+//			Application.Quit();
 		}
 	}
 }
