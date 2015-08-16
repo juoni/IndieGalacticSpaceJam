@@ -77,7 +77,7 @@ public class SocketStateHandler : MonoBehaviour
                 }
                 if (_socket.ReadyState != WebSocketState.OPEN || _socket.ReadyState == WebSocketState.CONNECTING || _socket.ReadyState == WebSocketState.CLOSING)
                 {
-                    InitializeSocket(_autoConnect);
+                    InitializeSocket(_autoConnect,Address);
                 }
 
 
@@ -120,13 +120,14 @@ public class SocketStateHandler : MonoBehaviour
 	}
 	
 
-	public void InitializeSocket(bool autoConnect)
+	public void InitializeSocket(bool autoConnect, string address)
 	{
-		if (!string.IsNullOrEmpty (_address)) 
+		if (!string.IsNullOrEmpty (address)) 
 		{
             if (_socket == null)
             {
-                _socket = new WebSocket(_address);
+				Debug.Log("Socket Address:" + address);
+				_socket = new WebSocket(address);
                 SetupSocketEvents(_socket);
             }
 			
@@ -140,18 +141,18 @@ public class SocketStateHandler : MonoBehaviour
 
 	}
 
-	public void InitializeSocket(bool autoConnect, float timeout)
+	public void InitializeSocket(bool autoConnect, float timeout,string address)
 	{
 		if (timeout > 3)
 		{
 			_socketConnectionWaitTime = timeout;
 		}
 	
-		if (!string.IsNullOrEmpty (_address)) 
+		if (!string.IsNullOrEmpty (address)) 
 		{
             if (_socket == null)
             {
-                _socket = new WebSocket(_address);
+				_socket = new WebSocket(address);
                 SetupSocketEvents(_socket);
             }
 

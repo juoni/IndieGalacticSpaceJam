@@ -25,17 +25,13 @@ public class OpenGimbal : MonoBehaviour {
 		RIGHT,
 		NONE
 	}
-
-
-
-
-
-
 	//Break it out
 	public string address         = "ws://192.168.42.1:8888/ws";
+	public string address2        = "ws://192.168.42.2:8888/ws";
+
 	public string connectedString = "Connected to:";
 	public string guiLabel        = "Disconnected";
-	public bool   autoConnect     = false;
+	public bool   autoConnect     = true;
 
 	public string toScope = "";
 
@@ -44,7 +40,7 @@ public class OpenGimbal : MonoBehaviour {
 	public int   timeWaitedForConnection  = 0;
 	public float lastTimeCaptured         =0f;
 
-	public int currentBot = -1;
+	public int currentBot = 0;
 
     //public GestureListener 	gestureListener = null;
 
@@ -53,17 +49,26 @@ public class OpenGimbal : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-
-  
 		_robots = new List<SocketStateHandler> ();
-		if (autoConnect)
-		{
+	
+
+
 			_robots.Add(gameObject.AddComponent<SocketStateHandler>());
 			_robots[_robots.Count -1].Address = address;
+			_robots[_robots.Count -1].InitializeSocket(autoConnect,address);
+			_robots [_robots.Count - 1].RobotName = "Star Bot";
 
-				_robots[_robots.Count -1].InitializeSocket(autoConnect);
-			currentBot = _robots.Count -1;
-		}
+			currentBot = 0;
+
+			_robots.Add(gameObject.AddComponent<SocketStateHandler>());
+			_robots[_robots.Count -1].Address = address2;
+			_robots[_robots.Count -1].InitializeSocket(autoConnect,address2);
+		    _robots [_robots.Count - 1].RobotName = "Rover";
+	
+				
+
+		
+		
 
     //    gestureListener = Camera.main.GetComponent<GestureListener>();
 
@@ -71,10 +76,10 @@ public class OpenGimbal : MonoBehaviour {
 
 	void OnGUI()
 	{
-		if (_robots[_robots.Count -1] != null)
-        {
-			GUILayout.Label (_robots[_robots.Count -1].GetSocketState().ToString());
+		for (int i = 0; i < _robots.Count; i++) {
+			GUILayout.Label(_robots[i].RobotName + ": " +_robots[i].GetSocketState().ToString());
 		}
+	
 
 	}
 
@@ -83,81 +88,81 @@ public class OpenGimbal : MonoBehaviour {
 		if (Input.GetKeyUp (KeyCode.UpArrow)) 
 		{
 
-			_robots[0].BroadcastMessage(toScope);
+			_robots[currentBot].BroadcastMessage(toScope);
 		}
 	}
 	
 	// Update is called once per frame
-	void Update ()
-	{
-
-        if (_robots[0] != null)
-        {
-        //    KinectManager kinectManager = KinectManager.Instance;
-
-
-          //  if (kinectManager != null)
-            //{
-              //  if (kinectManager.IsInitialized())
-                //{
-                  //  if (kinectManager.IsUserDetected())
-                    //{
-                      //  if (gestureListener.IsSwipeLeft())
-                        //{
-                          //  GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
-
-                        //}
-
-                        //else if (gestureListener.IsSwipeRight())
-                        //{
-                          //  GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
-
-
-                    //    /}
-                    //}
-                //}
-            //}
-        
-        }
-
- 
-	}
+//	void Update ()
+//	{
+//
+//        if (_robots[currentBot] != null)
+//        {
+//        //    KinectManager kinectManager = KinectManager.Instance;
+//
+//
+//          //  if (kinectManager != null)
+//            //{
+//              //  if (kinectManager.IsInitialized())
+//                //{
+//                  //  if (kinectManager.IsUserDetected())
+//                    //{
+//                      //  if (gestureListener.IsSwipeLeft())
+//                        //{
+//                          //  GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
+//
+//                        //}
+//
+//                        //else if (gestureListener.IsSwipeRight())
+//                        //{
+//                          //  GameObject.Find("DirectionalGear").GetComponent<DirectionalGearController>().n();
+//
+//
+//                    //    /}
+//                    //}
+//                //}
+//            //}
+//        
+//        }
+//
+// 
+//	}
 	#endregion
-
-	void ConnectToSocketServer()
-	{
-//		if (socket == null) {
-//			CreateSocket(address);
-//			socket.Connect ();
-//			if (socket.IsAlive) {
-//				guiLabel = "connected";
-//				connecting = false;
-//				disconnected = false;
-//			}
-//		} else {
-//			connecting = true;
-//			guiLabel = "connecting";
-//			socket.Connect ();
-//			
-//			if (socket.IsAlive) {
-//				guiLabel = "connected";
-//				connecting = false;
-//				disconnected = false;
-//			}
-//		}
-	}
-
-	void DisconnectFromServer()
-	{
-//		if (socket != null)
-//		{
-//			connected    = false;
-//			socket.Dispose();
-//			disconnected = true;
-//			socket       = null;
-//			guiLabel = "Disconnected";
-//		}
-	}
+//
+//	void ConnectToSocketServer()
+//	{
+////		if (socket == null) {
+////			CreateSocket(address);
+////			socket.Connect ();
+////			if (socket.IsAlive) {
+////				guiLabel = "connected";
+////				connecting = false;
+////				disconnected = false;
+////			}
+////		} else {
+////			connecting = true;
+////			guiLabel = "connecting";
+////			socket.Connect ();
+////			
+////			if (socket.IsAlive) {
+////				guiLabel = "connected";
+////				connecting = false;
+////				disconnected = false;
+////			}
+////		}
+//	}
+//
+//	void DisconnectFromServer()
+//	{
+////		if (socket != null)
+////		{
+////			connected    = false;
+////			socket.Dispose();
+////			disconnected = true;
+////			socket       = null;
+////			guiLabel = "Disconnected";
+////		}
+//	}
 
 
 	void TimeOut(){

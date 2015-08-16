@@ -36,7 +36,9 @@ public class OgpSftpHandler : MonoBehaviour {
 
    public IEnumerator download(string image)
     {
-        www = new WWW("http://192.168.42.1/"+image+".jpg");
+		OpenGimbal ogp = GameObject.Find ("OpenGimbal").GetComponent<OpenGimbal> ();
+		string addy = ogp.currentBot == 0 ? "http://192.168.42.1/" : "http://192.168.42.2/";
+        www = new WWW(addy+image+".jpg");
         yield return www;
 		r = gameObject.GetComponent<GUITexture> ();
      //   r.texture = www.texture;

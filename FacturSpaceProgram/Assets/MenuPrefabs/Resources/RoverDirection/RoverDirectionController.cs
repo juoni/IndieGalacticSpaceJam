@@ -29,7 +29,8 @@ public virtual void Refresh(){
 
 	}
 
-public virtual void Rover(){}
+	public virtual void Rover(){OpenGimbal ogp = GameObject.Find ("OpenGimbal").GetComponent<OpenGimbal> ();
+		ogp.currentBot = ogp.currentBot == 0 ? 1 : 0;}
 public virtual void Slider(){}
 
 
