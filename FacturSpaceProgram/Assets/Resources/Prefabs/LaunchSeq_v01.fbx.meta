@@ -1,0 +1,185 @@
+fileFormatVersion: 2
+guid: 299f82f583083654ea2e6146c2276f6a
+timeCreated: 1439678213
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Arm1
+    100002: Arm2
+    100004: Arm3
+    100006: Arm4
+    100008: Booster2
+    100010: Booster4
+    100012: Emitter1
+    100014: Emitter2
+    100016: Emitter3
+    100018: Emitter4
+    100020: Emitter5
+    100022: Emitter6
+    100024: Enviro
+    100026: Florida_Ground
+    100028: GameCam
+    100030: Ground
+    100032: LaunchPad
+    100034: //RootNode
+    100036: MainRocket
+    100038: MainTower
+    100040: OutLaunchGround1
+    100042: Platform
+    100044: RocketCam
+    100046: Sky
+    100048: SRB
+    100050: Tower01
+    100052: Tower02
+    100054: Tower03
+    100056: TowerArms
+    100058: Towers
+    100060: WaterTower
+    400000: Arm1
+    400002: Arm2
+    400004: Arm3
+    400006: Arm4
+    400008: Booster2
+    400010: Booster4
+    400012: Emitter1
+    400014: Emitter2
+    400016: Emitter3
+    400018: Emitter4
+    400020: Emitter5
+    400022: Emitter6
+    400024: Enviro
+    400026: Florida_Ground
+    400028: GameCam
+    400030: Ground
+    400032: LaunchPad
+    400034: //RootNode
+    400036: MainRocket
+    400038: MainTower
+    400040: OutLaunchGround1
+    400042: Platform
+    400044: RocketCam
+    400046: Sky
+    400048: SRB
+    400050: Tower01
+    400052: Tower02
+    400054: Tower03
+    400056: TowerArms
+    400058: Towers
+    400060: WaterTower
+    2300000: Arm1
+    2300002: Arm2
+    2300004: Arm3
+    2300006: Arm4
+    2300008: Booster2
+    2300010: Booster4
+    2300012: Florida_Ground
+    2300014: Ground
+    2300016: MainRocket
+    2300018: MainTower
+    2300020: OutLaunchGround1
+    2300022: Platform
+    2300024: Sky
+    2300026: Tower01
+    2300028: Tower02
+    2300030: Tower03
+    2300032: WaterTower
+    3300000: Arm1
+    3300002: Arm2
+    3300004: Arm3
+    3300006: Arm4
+    3300008: Booster2
+    3300010: Booster4
+    3300012: Florida_Ground
+    3300014: Ground
+    3300016: MainRocket
+    3300018: MainTower
+    3300020: OutLaunchGround1
+    3300022: Platform
+    3300024: Sky
+    3300026: Tower01
+    3300028: Tower02
+    3300030: Tower03
+    3300032: WaterTower
+    4300000: Tower01
+    4300002: Tower02
+    4300004: Tower03
+    4300006: WaterTower
+    4300008: Platform
+    4300010: Ground
+    4300012: Booster2
+    4300014: MainRocket
+    4300016: Booster4
+    4300018: Arm1
+    4300020: Arm2
+    4300022: Arm3
+    4300024: Arm4
+    4300026: MainTower
+    4300028: OutLaunchGround1
+    4300030: Florida_Ground
+    4300032: Sky
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 0
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 1
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
