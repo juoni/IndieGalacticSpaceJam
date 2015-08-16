@@ -31,8 +31,8 @@ public class azure : MonoBehaviour {
 		DateTime dt = DateTime.UtcNow;
 		
 		string stringToSign = String.Format("GET\n"
-		                                    + "\n" // content md5
-		                                    + "\n" // content type
+		                                    + "ikBSFEybyyhnVvEBQnhlzQ==\n" // content md5
+		                                    + "image/jpeg\n" // content type
 		                                    + "x-ms-date:" + dt.ToString("R") + "\nx-ms-version:2012-02-12\n" // headers
 		                                    + "/{0}/{1}\ncomp:list\nrestype:container", accountName, container);
 		
