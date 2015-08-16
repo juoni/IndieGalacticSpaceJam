@@ -16,7 +16,6 @@ PlayerSettings:
   cloudProjectId: 
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_ShowUnitySplashScreen: 1
   defaultScreenWidth: 1024
   defaultScreenHeight: 768
   defaultScreenWidthWeb: 960
@@ -119,7 +118,6 @@ PlayerSettings:
     serializedVersion: 2
     rgba: 0
   iOSLaunchScreenFillPct: 100
-  iOSLaunchScreenSize: 100
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
@@ -132,9 +130,13 @@ PlayerSettings:
   - width: 320
     height: 180
     banner: {fileID: 0}
+<<<<<<< HEAD
   androidGamepadSupportLevel: 0
   resolutionDialogBanner: {fileID: 2800000, guid: 41dd0bd13d756264a9a125094c04cae7,
     type: 3}
+=======
+  resolutionDialogBanner: {fileID: 0}
+>>>>>>> bf7451d81d29c374686ef42e0320fbb27e59159f
   m_BuildTargetIcons:
   - m_BuildTarget: 
     m_Icons:
