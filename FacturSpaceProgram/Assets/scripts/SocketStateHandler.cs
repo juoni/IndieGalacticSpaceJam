@@ -28,23 +28,31 @@ public class SocketStateHandler : MonoBehaviour
     string readystate;
     string data;
     string code;
+
+	SerialIn serialIn= null;
 	// Use this for initialization
 	void Start ()
 	{
-	  
+	  try
+		{
+			serialIn = GameObject.Find("SerialIn").GetComponent<SerialIn>();
+			serialIn.AddMessage("Serial Connection engaged");
+		}catch(System.NullReferenceException nre){
+			Debug.Log(nre + " Serial in not found");
+		}
 	}
 
     void OnGUI()
     {
 
-        GUILayout.BeginArea(new Rect(200f, 200f, 250f, 500f));
-        GUILayout.BeginVertical();
-        GUILayout.TextArea(" ORIGIN :|" + origin + System.Environment.NewLine +
-                            " READY_STATE: |" + readystate + System.Environment.NewLine +
-                            " DATA:   |" + data + System.Environment.NewLine +
-                            " CODE: | " + code);
-        GUILayout.EndVertical();
-        GUILayout.EndArea();
+//        GUILayout.BeginArea(new Rect(200f, 200f, 250f, 500f));
+//        GUILayout.BeginVertical();
+//        GUILayout.TextArea(" ORIGIN :|" + origin + System.Environment.NewLine +
+//                            " READY_STATE: |" + readystate + System.Environment.NewLine +
+//                            " DATA:   |" + data + System.Environment.NewLine +
+//                            " CODE: | " + code);
+//        GUILayout.EndVertical();
+//        GUILayout.EndArea();
     }
 	// Update is called once per frame
 	void Update ()
@@ -188,8 +196,10 @@ public class SocketStateHandler : MonoBehaviour
 	}
 
 	public void BroadcastMessage(string message){
-		Debug.Log ("Message sent: " + message);
+		serialIn.AddSerialOut (message);
+
 		_socket.Send (message);
+
 	}
 	//========== WebSocket Sharp Events ====================== 
 
@@ -208,7 +218,12 @@ public class SocketStateHandler : MonoBehaviour
 	{
 		ws.OnError += (object sender, ErrorEventArgs e) => 
 		{
-			//Debug.Log("Error reason: " + e.Message);
+			try{
+
+			serialIn.AddMessage(e.Message);
+			}catch(System.NullReferenceException nre){
+				Debug.Log(nre.Message);
+			}
 		};
 	}
 
@@ -216,10 +231,9 @@ public class SocketStateHandler : MonoBehaviour
 	{
 		ws.OnOpen += (object sender, System.EventArgs e) => {
 			WebSocket s = ((WebSocketSharp.WebSocket)sender);
-            Debug.Log(s.Origin + " ORIGIN");
-	        origin      =   s.Origin;
-			readystate  =   s.ReadyState.ToString();
-            data        = e.ToString();
+			serialIn.AddMessage(origin);
+			serialIn.AddMessage(readystate);
+			serialIn.AddMessage(data);
 			s.Send("n");
 		};
 	}
@@ -229,15 +243,12 @@ public class SocketStateHandler : MonoBehaviour
 
 		ws.OnMessage += (object sender, MessageEventArgs e) => {
 			WebSocket s = ((WebSocketSharp.WebSocket)sender);
-			
-			foreach(char blahs in s.Extensions){
-				Debug.Log(blahs);
-			}
+			Debug.Log(s.Cookies.ToString() + " COokies");
 
-            origin = ""+s.Origin;
-            readystate = "" + s.ReadyState;
-            Debug.Log("Setting DATA in On Message:" + s.ReadyState);
-            data = e.ToString();
+            serialIn.AddMessage(s.Origin);
+            serialIn.AddMessage(s.ReadyState.ToString());
+			serialIn.AddMessage(e.Data);
+          
 		};
 
 	}
@@ -246,7 +257,8 @@ public class SocketStateHandler : MonoBehaviour
 	{
 		ws.OnClose += (object sender, CloseEventArgs e) => {
             code = e.Code.ToString();
-			Debug.Log("Closing reason: " + e.Reason +"code: " + e.Code);
+			serialIn.AddMessage("Closed Reason: " + e.Reason); 
+			serialIn.AddMessage("Code: " + code);
 		};
 	}
 	//========== WebSocket Sharp Events ====================== 
