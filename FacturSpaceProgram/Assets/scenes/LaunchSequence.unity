@@ -438,6 +438,18 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: -10.0900002
       objectReference: {fileID: 0}
+    - target: {fileID: 2300016, guid: 299f82f583083654ea2e6146c2276f6a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300008, guid: 299f82f583083654ea2e6146c2276f6a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300010, guid: 299f82f583083654ea2e6146c2276f6a, type: 3}
+      propertyPath: m_ReceiveShadows
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 299f82f583083654ea2e6146c2276f6a, type: 3}
   m_IsPrefabParent: 0
@@ -1158,7 +1170,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
-  m_StereoMirrorMode: 0
 --- !u!82 &1972450566
 AudioSource:
   m_ObjectHideFlags: 0
